@@ -1,36 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from scmapp.models import User, Admin, Event, Book_ground
+
 import datetime
 
-# Create your views here.
-
-#User Registration / Login Page
 def index(request):
-    return render(request,'registration.html')
+    return render(request, 'registration.html')
 
-#User Home Page
+def user_event(request):
+    events = Event.objects.all()
+    return render(request, 'user_event.html', {'event': events})
+    # Your view logic here
+
 def user_home(request):
     if 'uname' in request.session:
-        data = {'name':request.session.get('uname')}
+        data = {'name': request.session.get('uname')}
 
         if 'book_status' in request.session:
             data['status'] = request.session['book_status']
 
-        return render(request,'user_home.html',context=data)
+        return render(request, 'user_home.html', context=data)
     else:
-        data = {'status':'You need to login first'}
-        return render(request,'registration.html',context=data)
-
-#User Event Page
-def user_event(request):
-    if 'uname' in request.session:
-        event = Event.objects.all()
-        data = {'event':event}
-        return render(request,'user_event.html',context=data)
-    else:
-        data = {'status':'You need to login first'}
-        return render(request,'registration.html',context=data)
+        data = {'status': 'You need to login first'}
+        return render(request, 'registration.html', context=data)
 
 #User Ground Booking Page
 def ground_booking(request):

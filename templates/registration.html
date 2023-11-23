@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Sports Club Management | Welcome</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Event Booking</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css"> -->
 
@@ -17,10 +18,10 @@
   <link rel="stylesheet" href="{% static "css/registration.css" %}">
   <script type="text/javascript" src="{% static "js/main.js" %}"></script>
 </head>
-<body>
+<body style=" font-family: serif; ">
 
-<div class="container-fluid header text-center">
-  Sports Club Management
+<div class="container-fluid header text-center bg-primary">
+  <h1 style="color: white; font-family: serif; padding: 23px;margin-top: -32px ;">Events In Kenya</h1>
 </div>
 
 <div class="container-fluid">
@@ -34,10 +35,13 @@
 
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="col-lg-6 box" style="display:block;">
+    <div class="col-lg-6 box " style="display:block;overflow: hidden;">
       <!-- <span style="font-size:26px;">Registration</span> -->
-      Registration<br>
-      <span style="font-size:18px;">{{ status }}</span>
+      <div class="bg-primary " style="margin-left: -30px;padding: 22px;margin-top: -40px;">
+        <h1  style="color: white; text-align: center;"> Registration</h1>
+        <span style="font-size:18px;color: white;align-items: center; justify-content: center; display: flex;">{{ status }}</span>
+      </div>
+     
 
       <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -65,7 +69,7 @@
           </div>
         </div>
     </div>
-    <a href="#" onclick="navigation(event)" id="loginLink">Already registered? Login</a>
+    <a href="#" onclick="navigation(event)" id="loginLink" style="color: white;">Already registered? Login</a>
 
     </div>
   </div>
@@ -73,9 +77,12 @@
 
 <div class="container-fluid">
   <div class="row justify-content-center">
-    <div class="col-lg-6 loginBox" style="display:none;">
-      Login
-
+    <div class="col-lg-6 loginBox " style="display:none;overflow: hidden;">
+     
+      <div class="bg-primary " style="margin-left: -30px;padding: 22px;margin-top: -40px;">
+        <h1  style="color: white; text-align: center;"> Login</h1>
+      
+      </div>
       <div class="row justify-content-center">
         <div class="col-lg-6">
           <div class="inputBox" style="font-size:18px;">
@@ -92,7 +99,7 @@
           </div>
         </div>
       </div>
-      <a href="#" onclick="navigation(event)" id="regLink">Not a registered user? Register</a>
+      <a href="#" onclick="navigation(event)" id="regLink" style="color: white;">Not a registered user? Register</a>
 
     </div>
   </div>
